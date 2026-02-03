@@ -20,9 +20,21 @@
 # Os dados incluem medições de temperatura. Você precisa classificar cada leitura 
 # como 'Baixa', 'Normal' ou 'Alta'. Considerando que:
 
+# Temperatura < 18°C é 'Baixa'
+# Temperatura >= 18°C e <= 26°C é 'Normal'
+# Temperatura > 26°C é 'Alta'
 
 
 
+
+#temperatura = 23 # valor de exemplo, pode ser substituído por input de usuário
+
+# if temperatura < 18:
+#     print("Baixa")
+# elif temperatura >= 18 and temperatura <= 26:
+#     print("Normal")
+# else:
+#     print("Alta")
 
 
 ### Exercício 3: Filtragem de Logs por Severidade
@@ -31,11 +43,48 @@
 # como `log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}`, 
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 
+# log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}
+
+# if log['level'] == 'ERROR':
+#     print(log['message'])
+
+
 ### Exercício 4: Validação de Dados de Entrada
 # Antes de processar os dados de usuários em um sistema de recomendação, 
 # você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha 
 # fornecido um email válido. Escreva um programa que valide essas condições 
 # e imprima "Dados de usuário válidos" ou o erro específico encontrado.
+
+
+# idade = False
+# email = False
+
+# while not idade:
+#     try:
+#         idade_input = input("Digite sua idade: ")
+#         if idade_input.isdigit():
+#             idade_valor = int(idade_input)
+#             if 18 <= idade_valor <= 65:
+#                 idade = True
+#             else:
+#                 print("Idade inválida. Deve estar entre 18 e 65 anos.")
+#                 exit()
+#         else:
+#             print("Por favor, insira um número válido para a idade.")
+#     except Exception as e:
+#             print("Erro ao processar a idade:", e)
+
+# while not email:
+#     try:
+#         email_input = input("Digite seu email: ")
+#         if "@" in email_input and "." in email_input:
+#             email = True
+#         else:
+#             print("Email inválido. Deve conter '@' e '.'")
+#     except Exception as e:
+#             print("Erro ao processar o email:", e)
+    
+# print("Dados de usuário válidos")
 
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar 
