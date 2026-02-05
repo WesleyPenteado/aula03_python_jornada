@@ -112,28 +112,123 @@
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
 
+# numeros = [10, 20, 30, 40, 50]
+# min_num = min(numeros)
+# max_num = max(numeros)
+# normalizados = [(x - min_num) / (max_num - min_num) for x in numeros]
+# print(normalizados)
+
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
+
+# usuarios = [
+#     {"nome": "Alice", "email": "alice@example.com"},
+#     {"nome": "Bob", "email": ""},
+#     {"nome": "Carol", "email": "carol@example.com"}
+# ]
+# usuarios_com_email = [usuario for usuario in usuarios if usuario["email"]]
+# usuarios_sem_email = [usuario for usuario in usuarios if not usuario["email"]]
+# print(usuarios_com_email)
+# print(usuarios_sem_email)
+
 
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
 
+# numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# pares = [num for num in numeros if num % 2 == 0]
+# print(pares)
+
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+
+
+# vendas = [
+#     {"categoria": "eletrônicos", "valor": 1200},
+#     {"categoria": "livros", "valor": 200},
+#     {"categoria": "eletrônicos", "valor": 800}
+# ]
+# total_por_categoria = {}
+# for venda in vendas:
+#     categoria = venda['categoria']
+#     valor = venda ['valor']
+#     if categoria in total_por_categoria:
+#         total_por_categoria[categoria] += valor
+#     else:
+#         total_por_categoria[categoria] = valor
+# print(total_por_categoria)
 
 ### Exercícios com WHILE
 
 ### Exercício 11. Leitura de Dados até Flag
 # Ler dados de entrada até que uma palavra-chave específica ("sair") seja fornecida.
 
+# dados = []
+# entrada = ""
+# while entrada.lower() != 'sair':
+#     entrada = input("Digite um dado (ou 'sair' para encerrar): ")
+#     dados.append(entrada)
+# print(dados)
+
+
 ### Exercício 12. Validação de Entrada
 # Solicitar ao usuário um número dentro de um intervalo específico até que a entrada seja válida.
+
+# import random
+
+# numero_secreto = random.randint(1,20)
+# lista = []
+# num = ""
+# while num != numero_secreto:
+#     num = int(input("Advinhe um número entre 1 e 20: "))
+#     lista.append(num)
+#     print('Errou, tente novamente!')
+
+# tentativas = len(lista)
+
+# print(f"Parabéns! Você acertou em {tentativas} tentativas.")
+
+
 
 ### Exercício 13. Consumo de API Simulado
 # Simular o consumo de uma API paginada, onde cada "página" de dados é processada em loop até que não haja mais páginas.
 
+# pagina_atual = 1
+# paginas_totais = 5  # Simulação, na prática, isso viria da API
+# while pagina_atual <= paginas_totais:
+#     print(f"Processando página {pagina_atual} de {paginas_totais}")
+#     # Aqui iria o código para processar os dados da página
+#     pagina_atual += 1
+
+# print("Todas as páginas foram processadas.")
+
 ### Exercício 14. Tentativas de Conexão
 # Simular tentativas de reconexão a um serviço com um limite máximo de tentativas.
 
+# tentativas_maximas = 5
+# tentativa = 1
+
+# while tentativa <= tentativas_maximas:
+#     print(f"Tentativa {tentativa} de {tentativas_maximas}")
+#     # Simulação de uma tentativa de conexão
+#     # Aqui iria o código para tentar conectar
+#     if True:  # Suponha que a conexão foi bem-sucedida
+#         print("Conexão bem-sucedida!")
+#         break
+#     tentativa += 1
+# else:
+#     print("Falha ao conectar após várias tentativas.")
+
 ### Exercício 15. Processamento de Dados com Condição de Parada
 # Processar itens de uma lista até encontrar um valor específico que indica a parada.
+
+# itens = [1, 2, 3, "parar", 4, 5]
+
+# i = 0
+# while i < len(itens):
+#     if itens[i] == "parar":
+#         print("Parada encontrada, encerrando o processamento.")
+#         break
+#     # Processa o item
+#     print(f"Processando item: {itens[i]}")
+#     i += 1
